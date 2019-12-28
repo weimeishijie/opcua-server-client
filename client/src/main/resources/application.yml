@@ -1,0 +1,10 @@
+opcua:
+  address: opc.tcp://localhost:52520/OPCUA/BosonOPCUAServer
+  retry:
+    maxAttempts: 3
+    backOffPeriod: 1000
+  publishingRate: 100
+  automationLineRobotStatusSubscribeNodes:
+          - NodeBase# AutomationLine.AutomationLineRobotStatus
+            - SubsribeNode# 001robotStatus, 002robotStatus, 003robotStatus, 004robotStatus, 005robotStatus, 006robotStatus,
+                            007robotStatus, 008robotStatus,
