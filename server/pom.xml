@@ -20,6 +20,28 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.prosysopc</groupId>
+            <artifactId>ua-sdk</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.opcfoundation</groupId>
+            <artifactId>ua-stack</artifactId>
+            <version>1.02.337</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.opcfoundation</groupId>
+            <artifactId>ua-bcpkix</artifactId>
+            <version>1.52.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.prosysopc</groupId>
+            <artifactId>ua-bcprov</artifactId>
+            <version>1.52.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -27,6 +49,45 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <executions>
+                    <execution>
+                        <id>install-ua-bcpkix</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${basedir}/lib/bcpkix-1.52.0.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            <groupId>org.opcfoundation</groupId>
+                            <artifactId>ua-bcpkix</artifactId>
+                            <version>1.52.0</version>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-ua-bcprov</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${basedir}/lib/bcprov-1.52.0.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            <groupId>org.prosysopc</groupId>
+                            <artifactId>ua-bcprov</artifactId>
+                            <version>1.52.0</version>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

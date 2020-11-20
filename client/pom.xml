@@ -17,11 +17,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.opcfoundation</groupId>
-            <artifactId>sqljdbc42</artifactId>
-            <version>4.2.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.retry</groupId>
             <artifactId>spring-retry</artifactId>
         </dependency>
@@ -78,22 +73,6 @@
                             <groupId>org.opcfoundation</groupId>
                             <artifactId>ua-stack</artifactId>
                             <version>1.02.337</version>
-                            <packaging>jar</packaging>
-                            <generatePom>true</generatePom>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>install-jdbc-sqlServer</id>
-                        <phase>clean</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>${basedir}/lib/sqljdbc42.jar</file>
-                            <repositoryLayout>default</repositoryLayout>
-                            <groupId>org.opcfoundation</groupId>
-                            <artifactId>sqljdbc42</artifactId>
-                            <version>4.2.0</version>
                             <packaging>jar</packaging>
                             <generatePom>true</generatePom>
                         </configuration>
